@@ -47,7 +47,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 0
+  m_ActiveColorSpace: 1
   m_MTRendering: 1
   mipStripping: 0
   numberOfMipsStripped: 0
@@ -610,7 +610,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: FIRST_PERSON_CONTROLLER;THIRD_PERSON_CONTROLLER;ULTIMATE_CHARACTER_CONTROLLER_SHOOTER;FIRST_PERSON_SHOOTER;ULTIMATE_CHARACTER_CONTROLLER_MELEE;FIRST_PERSON_MELEE;ULTIMATE_CHARACTER_CONTROLLER_UNIVERSALRP
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
