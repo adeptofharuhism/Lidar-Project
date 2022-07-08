@@ -1,102 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &448587307459036053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5738135691687633287}
-  - component: {fileID: 3703087864354257880}
-  - component: {fileID: 3901455254358186936}
-  - component: {fileID: 2087694143837710719}
-  m_Layer: 0
-  m_Name: cubus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5738135691687633287
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448587307459036053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99, y: 0.99, z: 0.99}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 6728973175564781643}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3703087864354257880
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448587307459036053}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3901455254358186936
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448587307459036053}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2087694143837710719
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448587307459036053}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &930115086467430896
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +13,7 @@ GameObject:
   - component: {fileID: 3940781152530747868}
   - component: {fileID: 7598005207019366690}
   - component: {fileID: 6975205971331706283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuadDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintableMaterial: {fileID: 2100000, guid: 82937e14c249d3d4d81b6ee62e7ca45a, type: 2}
   _objectRenderer: {fileID: 3940781152530747868}
-  _textureSizePerUnit: 16
+  _textureSizePerUnit: 32
   _emissionColor: {r: 0, g: 1, b: 0.15767026, a: 1}
 --- !u!1 &1222712079981509895
 GameObject:
@@ -225,7 +128,7 @@ GameObject:
   - component: {fileID: 2259709718544776314}
   - component: {fileID: 9135848254200431996}
   - component: {fileID: 2742402371296721146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuadLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintableMaterial: {fileID: 2100000, guid: 82937e14c249d3d4d81b6ee62e7ca45a, type: 2}
   _objectRenderer: {fileID: 2259709718544776314}
-  _textureSizePerUnit: 16
+  _textureSizePerUnit: 32
   _emissionColor: {r: 0, g: 1, b: 0.15767026, a: 1}
 --- !u!1 &3540345510341248012
 GameObject:
@@ -361,7 +264,6 @@ Transform:
   - {fileID: 6187191481722693717}
   - {fileID: 6683362107192432702}
   - {fileID: 5127976988323851952}
-  - {fileID: 5738135691687633287}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -378,7 +280,7 @@ GameObject:
   - component: {fileID: 8752806836668722652}
   - component: {fileID: 5001583296364362930}
   - component: {fileID: 1632631514628430770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuadBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintableMaterial: {fileID: 2100000, guid: 82937e14c249d3d4d81b6ee62e7ca45a, type: 2}
   _objectRenderer: {fileID: 8752806836668722652}
-  _textureSizePerUnit: 16
+  _textureSizePerUnit: 32
   _emissionColor: {r: 0, g: 1, b: 0.15767026, a: 1}
 --- !u!1 &4872925568218850477
 GameObject:
@@ -493,7 +395,7 @@ GameObject:
   - component: {fileID: 23923356673196560}
   - component: {fileID: 2882072303732202180}
   - component: {fileID: 6877221864526658875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuadFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintableMaterial: {fileID: 2100000, guid: 82937e14c249d3d4d81b6ee62e7ca45a, type: 2}
   _objectRenderer: {fileID: 23923356673196560}
-  _textureSizePerUnit: 16
+  _textureSizePerUnit: 32
   _emissionColor: {r: 0, g: 1, b: 0.15767026, a: 1}
 --- !u!1 &5761548883807001270
 GameObject:
@@ -608,7 +510,7 @@ GameObject:
   - component: {fileID: 8026038774188687687}
   - component: {fileID: 2040238951467379321}
   - component: {fileID: 4107813921241399777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuadUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintableMaterial: {fileID: 2100000, guid: 82937e14c249d3d4d81b6ee62e7ca45a, type: 2}
   _objectRenderer: {fileID: 8026038774188687687}
-  _textureSizePerUnit: 16
+  _textureSizePerUnit: 32
   _emissionColor: {r: 0, g: 1, b: 0.15767026, a: 1}
 --- !u!1 &6051695393134278647
 GameObject:
@@ -723,7 +625,7 @@ GameObject:
   - component: {fileID: 6740030493367214658}
   - component: {fileID: 6073247156252945988}
   - component: {fileID: 7184454885423122337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuadRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,5 +725,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paintableMaterial: {fileID: 2100000, guid: 82937e14c249d3d4d81b6ee62e7ca45a, type: 2}
   _objectRenderer: {fileID: 6740030493367214658}
-  _textureSizePerUnit: 16
+  _textureSizePerUnit: 32
   _emissionColor: {r: 0, g: 1, b: 0.15767026, a: 1}
