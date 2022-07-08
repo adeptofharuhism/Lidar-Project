@@ -5,11 +5,14 @@ using UnityEngine;
 public class Scanner : MonoBehaviour
 {
     [SerializeField] private Transform _scanPoint;
+    [SerializeField] private int _raycastsPerFixedUpdate = 10;
     [Header("Scan Parameters")]
     [SerializeField] private LayerMask _scanLayerMask = new LayerMask();
     [SerializeField] private float _scanDispersion = 0;
 
     private Transform _cameraTransform;
+
+    private List<PaintableSurface> _contactedSurfacesPerFrame = new List<PaintableSurface>();
 
     private void Start() {
         _cameraTransform = Camera.main.transform;
@@ -17,7 +20,14 @@ public class Scanner : MonoBehaviour
 
     private void Update() {
         if (Input.GetMouseButton(0))
+            PaintSpray();
+    }
+
+    private void PaintSpray() {
+        for (int i = 0; i < _raycastsPerFixedUpdate; i++)
             PaintOnePoint();
+
+        ApplyChangesOnSurfaces();
     }
 
     private void PaintOnePoint() {
@@ -29,8 +39,19 @@ public class Scanner : MonoBehaviour
             layerMask: _scanLayerMask)) {
             if (hit.collider.TryGetComponent(out PaintableSurface surface)) {
                 surface.DrawPixelOnRaycastHit(hit);
+
+                if (!_contactedSurfacesPerFrame.Contains(surface))
+                    _contactedSurfacesPerFrame.Add(surface);
             }
         }
+    }
+
+    private void ApplyChangesOnSurfaces() {
+        foreach(var surface in _contactedSurfacesPerFrame) {
+            surface.ApplyTextureChanges();
+        }
+
+        _contactedSurfacesPerFrame.Clear();
     }
 
     private Vector3 GetDispersedVector() {
