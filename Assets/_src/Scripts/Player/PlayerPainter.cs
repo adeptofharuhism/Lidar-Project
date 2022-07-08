@@ -11,11 +11,11 @@ public class PlayerPainter : MonoBehaviour
     private float _singleDotCooldownCurrent = 0;
 
     private void OnEnable() {
-        InputManager.OnMouseLeftPressed += PaintSingleDot;
+        //InputManager.OnMouseLeftPressed += PaintSingleDot;
     }
 
     private void OnDisable() {
-        InputManager.OnMouseLeftPressed -= PaintSingleDot;
+        //InputManager.OnMouseLeftPressed -= PaintSingleDot;
     }
 
     private void Update() {
