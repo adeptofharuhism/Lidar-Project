@@ -8,7 +8,10 @@ public class Scanner : MonoBehaviour
     [SerializeField] private int _raycastsPerFixedUpdate = 10;
     [Header("Scan Parameters")]
     [SerializeField] private LayerMask _scanLayerMask = new LayerMask();
-    [SerializeField] private float _scanDispersion = 0;
+    [SerializeField] private int _scanDispersion = 150;
+    [SerializeField] private int _maxDispersion = 300;
+    [SerializeField] private int _minDispersion = 50;
+    [SerializeField] private int _dispersionChangeStep = 10;
 
     private Transform _cameraTransform;
 
@@ -18,9 +21,16 @@ public class Scanner : MonoBehaviour
         _cameraTransform = Camera.main.transform;
     }
 
-    private void Update() {
-        if (Input.GetMouseButton(0))
-            PaintSpray();
+    private void OnEnable() {
+        ScannerInputManager.OnDefaultScanUsed += PaintSpray;
+        ScannerInputManager.OnDecreaseScanRadius += HandleDecraseScanRadus;
+        ScannerInputManager.OnIncreaseScanRadius += HandleIncreaseScanRadius;
+    }
+
+    private void OnDisable() {
+        ScannerInputManager.OnDefaultScanUsed -= PaintSpray;
+        ScannerInputManager.OnDecreaseScanRadius -= HandleDecraseScanRadus;
+        ScannerInputManager.OnIncreaseScanRadius -= HandleIncreaseScanRadius;
     }
 
     private void PaintSpray() {
@@ -58,8 +68,22 @@ public class Scanner : MonoBehaviour
         Vector3 direction = _cameraTransform.forward;
 
         direction += Quaternion.AngleAxis(Random.Range(0, 360), _cameraTransform.forward) *
-            _cameraTransform.up * Random.Range(0, _scanDispersion / 360);
+            _cameraTransform.up * Random.Range(0, _scanDispersion / 360f);
 
         return direction;
+    }
+
+    private void HandleDecraseScanRadus() {
+        ChangeScanRadius(-_dispersionChangeStep);
+    }
+
+    private void HandleIncreaseScanRadius() {
+        ChangeScanRadius(_dispersionChangeStep);
+    }
+
+    private void ChangeScanRadius(int amount) {
+        _scanDispersion += amount;
+
+        _scanDispersion = Mathf.Clamp(_scanDispersion, _minDispersion, _maxDispersion);
     }
 }

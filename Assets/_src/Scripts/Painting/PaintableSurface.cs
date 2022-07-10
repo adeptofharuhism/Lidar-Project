@@ -3,7 +3,7 @@ using UnityEngine;
 public class PaintableSurface : MonoBehaviour
 {
     private const float COLOR_IMPACT_ON_PIXEL_DRAW = 0.25f;
-    private const int TEXTURE_SIZE_PER_UNIT = 64;
+    private const int TEXTURE_SIZE_PER_UNIT = 96;
 
     [SerializeField] private Material _paintableMaterial;
     [SerializeField] private Renderer _objectRenderer;
